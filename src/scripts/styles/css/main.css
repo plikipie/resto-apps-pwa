@@ -1,0 +1,127 @@
+:root {
+  --primary-color: #cae8d5;
+  --secondary-color: #84a9ac;
+  --text-color: #3b6978;
+  --pseudo-color: #204051;
+  --title: "Kaushan Script", cursive;
+  --text: "Didact Gothic", sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--text);
+  background-color: var(--primary-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-bar {
+  display: flex;
+  min-height: 52px;
+  position: fixed;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  z-index: 999;
+  padding: 20px 0;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.app-bar .app-bar__menu {
+  display: flex;
+  align-items: center;
+}
+
+.app-bar .app-bar__menu button {
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.app-bar .app-bar__brand {
+  display: flex;
+  align-items: center;
+}
+
+.app-bar .app-bar__brand h1 {
+  color: var(--pseudo-color);
+  text-shadow: 2px 2px var(--secondary-color);
+  font-family: var(--title);
+  font-size: 32px;
+  user-select: none;
+}
+
+.app-bar .app-bar__navigation {
+  position: absolute;
+  top: 50px;
+  left: -180px;
+  width: 150px;
+  transition: all 0.5s;
+  padding: 8px;
+  overflow: hidden;
+  justify-content: space-around;
+}
+
+.app-bar .app-bar__navigation.open {
+  left: 0;
+}
+
+.app-bar .app-bar__navigation ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  background-color: var(--pseudo-color);
+  font-weight: 500;
+  padding: 8px;
+  margin-bottom: 5px;
+  width: 100%;
+  border: 1px solid var(--pseudo-color);
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+.app-bar .app-bar__navigation ul li a:hover {
+  background-color: var(--secondary-color);
+  color: white;
+  transition: 0.5s;
+}
+
+main {
+  padding: 32px;
+  flex: 1;
+}
+
+.content {
+  margin: 0 auto;
+  min-height: 100%;
+}
+
+.content .content__heading {
+  font-weight: normal;
+}
+
+footer {
+  padding: 16px;
+}
+
+footer p {
+  text-align: center;
+  color: var(--text-color);
+  font-family: var(--text);
+}
+
+footer p a {
+  text-decoration: none;
+  color: var(--pseudo-color);
+  font-weight: bold;
+  font-family: var(--title);
+  text-shadow: 2px 2px var(--secondary-color);
+}
+/*# sourceMappingURL=main.css.map */
