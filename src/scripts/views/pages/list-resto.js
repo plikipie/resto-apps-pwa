@@ -6,10 +6,10 @@ const ListResto = {
     return `
         <div class="content">
         <h2 class="content__heading"> Daftar Restaurant</h2>
+        </div>
         <div id="restaurants" class="restaurants">
         
         
-        </div>
         </div>
         `;
   },

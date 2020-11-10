@@ -94,17 +94,40 @@ body {
 }
 
 main {
-  padding: 32px;
+  padding: 80px;
   flex: 1;
 }
 
 .content {
+  display: flex;
+  justify-content: space-evenly;
   margin: 0 auto;
   min-height: 100%;
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border: 1px solid var(--pseudo-color);
 }
 
 .content .content__heading {
   font-weight: normal;
+}
+
+.container__restaurant {
+  text-align: center;
+  grid-gap: 10px 10px;
+  width: 100%;
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border: 1px solid var(--pseudo-color);
+}
+
+.container__restaurant .restaurant__title {
+  padding: 10px auto;
+  color: var(--text-color);
+  font-family: var(--text);
+  align-items: center;
 }
 
 footer {
