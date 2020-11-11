@@ -4,12 +4,12 @@ import { createRestaurantTemplate } from "../templates/template-creator";
 const ListResto = {
   async render() {
     return `
+        <div class="main_restaurant">
         <div class="content">
         <h2 class="content__heading"> Daftar Restaurant</h2>
         </div>
         <div id="restaurants" class="restaurants">
-        
-        
+        </div>
         </div>
         `;
   },

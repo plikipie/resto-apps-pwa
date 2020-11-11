@@ -96,20 +96,25 @@ body {
 main {
   padding: 80px;
   flex: 1;
+  position: relative;
+  display: grid !important;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
 }
 
-.content {
-  display: flex;
-  justify-content: space-evenly;
-  margin: 0 auto;
+.main__restaurant {
   min-height: 100%;
+}
+
+.main__restaurant .content {
+  margin: 0 auto;
   border-radius: 10px 10px 10px 10px;
   -moz-border-radius: 10px 10px 10px 10px;
   -webkit-border-radius: 10px 10px 10px 10px;
   border: 1px solid var(--pseudo-color);
 }
 
-.content .content__heading {
+.main__restaurant .content .content__heading {
   font-weight: normal;
 }
 
@@ -132,6 +137,7 @@ main {
 
 footer {
   padding: 16px;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 footer p {
