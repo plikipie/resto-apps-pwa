@@ -8,7 +8,7 @@
 }
 
 * {
-    padding: 0;
+    padding: 20;
     margin: 0;
 }
 
@@ -18,6 +18,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    max-width: 1200px;
 }
 
 // AppBar
@@ -54,7 +55,7 @@ body {
         }
     }
     .app-bar__navigation {
-        position: absolute;
+        display: flex;
         top: 50px;
         left: -180px;
         width: 150px;
@@ -66,18 +67,22 @@ body {
     .app-bar__navigation.open {
         left: 0;
     }
+    .hamburgerButton button {
+        display: none;
+    }
     .app-bar__navigation ul li a {
         display: inline-block;
         text-decoration: none;
+        font-size: 0.9em;
         color: white;
         background-color: var(--pseudo-color);
-        font-weight: 500;
         padding: 8px;
         margin-bottom: 5px;
         width: 100%;
         border: 1px solid var(--pseudo-color);
         border-radius: 5px;
         transition: 0.5s;
+        text-transform: uppercase;
     }
     .app-bar__navigation ul li a:hover {
         background-color: var(--secondary-color);
@@ -90,12 +95,11 @@ body {
 .hero {
     display: flex;
     align-items: center;
-    width: 100%;
+    width: 100% !important;
     min-height: 800px;
-    width: 100%;
     text-align: center;
     background-position: center;
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -108,15 +112,17 @@ body {
     max-width: 58%;
     margin: 0 auto;
     border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .hero__title {
+    font-family: var(--title);
     margin-top: 18px;
-    color: var(--text-color);
-    font-size: 38px;
-    font-weight: 700;
-    text-transform: uppercase;
+    color: var(--pseudo-color);
+    text-shadow: 2px 2px var(--secondary-color);
+    font-size: 48px;
+    object-fit: center;
+    object-position: center;
 }
 
 .hero__tagline {
@@ -126,43 +132,117 @@ body {
     font-size: 20px;
     font-weight: 100;
     padding: 10px 20px;
+    text-transform: uppercase;
 }
 
 // Main Content
 main {
-    padding: 80px;
+    padding: 20px;
+    padding-top: -20px;
     flex: 1;
     position: relative;
 }
 
-.main__restaurant {
-    min-height: 100%;
-    .content {
-        margin: 0 auto;
+.restaurants {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 10px;
+    max-width: 1200px;
+    .container__restaurant {
+        grid-gap: 10px 10px;
+        width: 100%;
         border-radius: 10px 10px 10px 10px;
         -moz-border-radius: 10px 10px 10px 10px;
         -webkit-border-radius: 10px 10px 10px 10px;
         border: 1px solid var(--pseudo-color);
-        .content__heading {
-            font-weight: normal;
+        .restaurant__title {
+            padding: 10px auto;
+            color: var(--text-color);
+            font-family: var(--text);
+            align-items: center;
+            font-size: 1.6em;
+        }
+        .restaurant__poster {
+            width: 100%;
+            overflow: hidden;
+        }
+        .content__info {
+            overflow: hidden;
+            .info__description {
+                overflow: hidden;
+            }
+        }
+        .detail__restaurant a {
+            padding: 10px;
+            text-decoration: none;
+            background-color: var(--text-color);
+            color: white;
+            border-radius: 5px;
+            overflow: hidden;
         }
     }
 }
 
-.container__restaurant {
-    text-align: center;
-    grid-gap: 10px 10px;
-    width: 100%;
-    border-radius: 10px 10px 10px 10px;
-    -moz-border-radius: 10px 10px 10px 10px;
-    -webkit-border-radius: 10px 10px 10px 10px;
-    border: 1px solid var(--pseudo-color);
-    .restaurant__title {
-        padding: 10px auto;
-        color: var(--text-color);
-        font-family: var(--text);
-        align-items: center;
+.detail_restaurant {
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 20px !important;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    .restaurant__detail {
+        display: flex;
+        overflow: hidden;
+        border-radius: 10px 10px 10px 10px;
+        -moz-border-radius: 10px 10px 10px 10px;
+        -webkit-border-radius: 10px 10px 10px 10px;
+        border: 1px solid #000000;
+        transition: 0.8s;
+        padding-bottom: 20px;
+        .restaurant__header {
+            max-width: 50%;
+        }
+        .restaurant__detail__image {
+            overflow: hidden;
+            width: 100%;
+        }
     }
+    .restaurant__detail:hover {
+        -webkit-box-shadow: 10px 10px 19px -2px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 10px 10px 19px -2px rgba(0, 0, 0, 0.75);
+        box-shadow: 10px 10px 19px -2px rgba(0, 0, 0, 0.75);
+        transition: 0.8s;
+    }
+    .customer__review {
+        border-radius: 10px 10px 10px 10px;
+        -moz-border-radius: 10px 10px 10px 10px;
+        -webkit-border-radius: 10px 10px 10px 10px;
+        overflow: hidden;
+        transition: 0.8s;
+        .bg-h1 {
+            background-color: white;
+            font-size: 0.9em;
+            text-align: center;
+            h1 {
+                color: var(--text-color);
+                font-family: var(--text);
+            }
+        }
+    }
+    .customer__review:hover {
+        border: 0px solid #000000;
+        -webkit-box-shadow: 10px 10px 19px -2px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 10px 10px 19px -2px rgba(0, 0, 0, 0.75);
+        box-shadow: 10px 10px 19px -2px rgba(0, 0, 0, 0.75);
+        transition: 0.8s;
+    }
+}
+
+.content__heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
 }
 
 // footer

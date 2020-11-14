@@ -13,7 +13,7 @@ const createRestaurantTemplate = (restaurant) => `
             <p class="info__description">${restaurant.description}</p>
         </div>
         <div class="detail__restaurant">
-        <h4><a href="${`/#/detail/${restaurant.id}`}">Detail Restaurant</a></h4>
+        <a href="${`/#/detail/${restaurant.id}`}"> More Detail </a>
         </div>
     </div>`;
 
@@ -23,7 +23,8 @@ const createRestaurantDetailTemplate = (restaurant) => `
             <h1 class="restaurant__detail__title">${restaurant.name}</h1>
             <img class="restaurant__detail__image" alt="${restaurant.name}"
             src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}">
-            <div class="restaurant__info">
+            </div>
+          <div class="restaurant__info">
             <h3 class="restaurant__rating"> ⭐️ Rating : ${
               restaurant.rating
             }</h3>
@@ -43,23 +44,22 @@ const createRestaurantDetailTemplate = (restaurant) => `
               .join(" - ")}</p>
             <h4>Description</h4>
             <p class="restaurant__description">${restaurant.description}</p>
-            </div>
+          </div>
         </div>
         <div class="customer__review">  
+        <div class="bg-h1">
         <h1>Review Restaurant</h1>
         </div>
-        <div class="review__info">
-            <h2>Nama : ${restaurant.customerReviews.map(
-              (names) => names.name
-            )}</h2>
+        <h2>Nama : ${restaurant.customerReviews.map((names) => names.name)}</h2>
             <h5>${restaurant.customerReviews.map(
               (reviews) => reviews.review
             )}</h5>
-        </div>
         <div class="review__date">
-            <p>${restaurant.customerReviews.map((dates) => dates.date)}</p>
+        <p>${restaurant.customerReviews.map((dates) => dates.date)}</p>
         </div>
-    </div>
+        </div>
+        </div>
+        
 `;
 
 export { createRestaurantTemplate, createRestaurantDetailTemplate };
