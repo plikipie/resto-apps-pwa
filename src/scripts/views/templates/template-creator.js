@@ -56,6 +56,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
             )}</h5>
         <div class="review__date">
         <p>${restaurant.customerReviews.map((dates) => dates.date)}</p>
+        
         </div>
         </div>
         </div>
