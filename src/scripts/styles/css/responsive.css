@@ -28,7 +28,7 @@
 @media screen and (max-width: 575px) {
   .restaurants {
     display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
+    grid-template-columns: 1fr !important;
     gap: 10px;
   }
 }

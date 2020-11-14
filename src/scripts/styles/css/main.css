@@ -147,6 +147,7 @@ main {
   padding-top: -20px;
   flex: 1;
   position: relative;
+  width: 100%;
 }
 
 .restaurants {
@@ -154,7 +155,7 @@ main {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
   gap: 10px;
-  max-width: 1200px;
+  width: 100%;
 }
 
 .restaurants .container__restaurant {
