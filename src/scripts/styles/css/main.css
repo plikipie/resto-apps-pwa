@@ -144,7 +144,7 @@ body {
 
 main {
   padding: 20px;
-  padding-top: -20px;
+  padding-top: 50px;
   flex: 1;
   position: relative;
   width: 100%;
@@ -152,7 +152,7 @@ main {
 
 .restaurants {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
   gap: 10px;
   width: 100%;
@@ -173,32 +173,72 @@ main {
   font-family: var(--text);
   align-items: center;
   font-size: 1.6em;
+  text-align: center;
 }
 
 .restaurants .container__restaurant .restaurant__poster {
   width: 100%;
+  min-height: 30vh;
   overflow: hidden;
 }
 
-.restaurants .container__restaurant .content__info {
-  overflow: hidden;
+.restaurants .container__restaurant .info__rating {
+  padding: 5px 5px 5px 5px;
 }
 
-.restaurants .container__restaurant .content__info .info__description {
-  overflow: hidden;
+.restaurants .container__restaurant .info__city {
+  padding: 10px 5px 5px 5px;
+  font-family: var(--text);
+  color: var(--text-color);
+}
+
+.restaurants .container__restaurant .info__description {
+  display: flex;
+  align-items: center;
+  padding: 5px 5px 5px 5px;
+  min-height: 75vh;
+}
+
+.restaurants .container__restaurant .detail__restaurant {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0 10px 10px;
+  text-align: center;
+  align-items: center;
+  object-position: center;
+  object-fit: center;
 }
 
 .restaurants .container__restaurant .detail__restaurant a {
-  padding: 10px;
+  padding: 5px;
   text-decoration: none;
   background-color: var(--text-color);
   color: white;
   border-radius: 5px;
   overflow: hidden;
+  transition: 0.5s;
+}
+
+.restaurants .container__restaurant .detail__restaurant a:hover {
+  color: black;
+  background-color: var(--secondary-color);
+  transition: 0.5s;
+}
+
+.backButton {
+  padding: 10px;
+  background-color: var(--pseudo-color);
+  text-decoration: none !important;
+  color: white;
+  border-radius: 5px;
+}
+
+.backButton a {
+  cursor: pointer;
 }
 
 .detail_restaurant {
-  display: grid;
+  display: grid !important;
   grid-template-columns: auto;
   grid-gap: 20px !important;
   padding-top: 20px;
@@ -207,7 +247,9 @@ main {
 
 .detail_restaurant .restaurant__detail {
   display: flex;
+  justify-content: space-around;
   overflow: hidden;
+  padding: 10px;
   border-radius: 10px 10px 10px 10px;
   -moz-border-radius: 10px 10px 10px 10px;
   -webkit-border-radius: 10px 10px 10px 10px;
@@ -217,12 +259,18 @@ main {
 }
 
 .detail_restaurant .restaurant__detail .restaurant__header {
-  max-width: 50%;
+  font-family: var(--text);
+  color: var(--text-color);
 }
 
 .detail_restaurant .restaurant__detail .restaurant__detail__image {
   overflow: hidden;
   width: 100%;
+  min-width: 100px !important;
+}
+
+.detail_restaurant .restaurant__detail .restaurant__info {
+  padding: 10px;
 }
 
 .detail_restaurant .restaurant__detail:hover {
@@ -260,6 +308,8 @@ main {
   align-items: center;
   justify-content: center;
   padding-bottom: 20px;
+  text-transform: uppercase !important;
+  font-size: 2em;
 }
 
 footer {
@@ -279,5 +329,22 @@ footer p a {
   font-weight: bold;
   font-family: var(--title);
   text-shadow: 2px 2px var(--secondary-color);
+}
+
+.like {
+  font-size: 18px;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background-color: var(--text-color);
+  color: white;
+  border: 0;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 /*# sourceMappingURL=main.css.map */

@@ -25,10 +25,10 @@ const createRestaurantDetailTemplate = (restaurant) => `
             src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}">
             </div>
           <div class="restaurant__info">
+            <h2 class="restaurant__city">Kota : ${restaurant.city}</h2>
             <h3 class="restaurant__rating"> ⭐️ Rating : ${
               restaurant.rating
             }</h3>
-            <h2 class="restaurant__city">City : ${restaurant.city}</h2>
             <h4>Restaurant Address</h4>
             <p>${restaurant.address}</p>
             <h4>Restaurant Categories</h4>
@@ -56,11 +56,27 @@ const createRestaurantDetailTemplate = (restaurant) => `
             )}</h5>
         <div class="review__date">
         <p>${restaurant.customerReviews.map((dates) => dates.date)}</p>
-        
         </div>
         </div>
         </div>
         
 `;
 
-export { createRestaurantTemplate, createRestaurantDetailTemplate };
+const createLikeButtonTemplate = () => `
+  <button aria-label="like this movie" id="likeButton" class="like">
+     <i class="fa fa-heart-o" aria-hidden="true"></i>
+  </button>
+`;
+
+const createLikedButtonTemplate = () => `
+  <button aria-label="unlike this movie" id="likeButton" class="like">
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  </button>
+`;
+
+export {
+  createRestaurantTemplate,
+  createRestaurantDetailTemplate,
+  createLikeButtonTemplate,
+  createLikedButtonTemplate,
+};
